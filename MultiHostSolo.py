@@ -34,7 +34,7 @@ if __name__ == '__main__':
     except:
         sys.exit(
 "MultiGuest 1.0.0\n\n\
-Usage: MultiGuest.py <platform>\n\n\
+Usage: MultiHostSolo.py <platform>\n\n\
 platforms:\n  emu\n  cel"
         )
     else:
@@ -50,6 +50,6 @@ platforms:\n  emu\n  cel"
         else:
             sys.exit(
 "MultiGuest 1.0.0\n\n\
-Usage: MultiGuest.py <platform>\n\n\
+Usage: MultiHostSolo.py <platform>\n\n\
 platforms:\n  emu\n  cel"
             )
