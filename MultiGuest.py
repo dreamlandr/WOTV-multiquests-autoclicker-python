@@ -36,25 +36,28 @@ if __name__ == '__main__':
 
     try:
         platform = sys.argv[1]
+    except KeyboardInterrupt:
+        sys.exit()
     except:
         sys.exit(
 "MultiGuest 1.0.0\n\n\
 Usage: MultiGuest.py <platform>\n\n\
 platforms:\n  emu\n  cel"
         )
-
-    if platform == 'emu' or platform == 'cel':
-        try:
-            while True:
-                # print(platform)
-                # sleep(5)
-                Multiguest(platform)
-        except KeyboardInterrupt:
-            sys.exit()
     else:
-        sys.exit(
+
+        if platform == 'emu' or platform == 'cel':
+            try:
+                while True:
+                    # print(platform)
+                    # sleep(5)
+                    Multiguest(platform)
+            except KeyboardInterrupt:
+                sys.exit()
+        else:
+            sys.exit(
 "MultiGuest 1.0.0\n\n\
 Usage: MultiGuest.py <platform>\n\n\
 platforms:\n  emu\n  cel"
-        )
+            )
         
