@@ -4,17 +4,7 @@ import sys, json
 import subprocess as sbp
 from time import sleep
 
-def Multiguest(platform):
-    if platform == 'emu':
-        file = "variables.json"
-    elif platform == 'cel':
-        file = "varcel.json"
-    else:
-        exit()
-
-    with open(file, 'r') as fp:
-        var = json.load(fp)
-
+def MultiHostSolo(platform):
     # I
     sbp.Popen(f"adb shell input tap {var['I'][0]} {var['I'][1]}",shell=True,stdout=sbp.PIPE)
     sleep(var['sleeptime'])
@@ -38,18 +28,21 @@ Usage: MultiHostSolo.py <platform>\n\n\
 platforms:\n  emu\n  cel"
         )
     else:
-
-        if platform == 'emu' or platform == 'cel':
-            try:
-                while True:
-                    # print(platform)
-                    # sleep(5)
-                    Multiguest(platform)
-            except KeyboardInterrupt:
-                sys.exit()
+        if platform == 'emu':
+            file = "variables.json"
+        elif platform == 'cel':
+            file = "varcel.json"
         else:
             sys.exit(
 "MultiGuest 1.0.0\n\n\
 Usage: MultiHostSolo.py <platform>\n\n\
 platforms:\n  emu\n  cel"
             )
+
+        with open(file, 'r') as fp:
+            var = json.load(fp)
+        try:
+            while True:
+                MultiHostSolo(var)
+        except KeyboardInterrupt:
+            sys.exit()
