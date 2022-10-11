@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-import sys, json
+import sys, yaml#, json
 import subprocess as sbp
 from time import sleep
 
@@ -34,24 +34,27 @@ if __name__ == '__main__':
         sys.exit()
     except:
         sys.exit(
-"MultiGuest 1.0.0\n\n\
+"""MultiGuest 1.0.0\n\n\
 Usage: MultiGuest.py <platform>\n\n\
-platforms:\n  emu\n  cel"
+platforms:\n  emu\n  cel"""
         )
     else:
         if platform == 'emu':
-            file = "variables.json"
+            # file = "variables.json"
+            file = "variables.yml"
         elif platform == 'cel':
-            file = "varcel.json"
+            # file = "varcel.json"
+            file = "varcel.yml"
         else:
             sys.exit(
-"MultiGuest 1.0.0\n\n\
+"""MultiGuest 1.0.0\n\n\
 Usage: MultiGuest.py <platform>\n\n\
-platforms:\n  emu\n  cel"
+platforms:\n  emu\n  cel"""
             )
 
         with open(file, 'r') as fp:
-            var = json.load(fp)
+            # var = json.load(fp)
+            var = yaml.safe_load(fp)
         try:
             while True:
                 Multiguest(var)

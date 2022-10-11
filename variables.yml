@@ -1,0 +1,30 @@
+# Command delay time
+sleeptime: 0.1
+doubletime: 1
+
+# Confirm Embark
+I: [825,500]
+
+# Formation 1st Multi battle guest
+O: [700,525]
+
+# Reload multi quests
+R: [2200,225]
+
+# Battle Settings
+T: [275,500]
+
+# Accept Friend / Apply
+U: [825,625]
+
+# Close quest details
+X: [1200,50]
+
+# Quest Details
+Y: [1275,75]
+
+
+Z: [2350,150]
+
+# Embark
+Space: [1225,675]
