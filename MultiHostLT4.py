@@ -4,7 +4,7 @@ import sys, yaml#,json
 import subprocess as sbp
 from time import sleep
 
-def MultiHostLT4(platform):
+def MHLT4(platform):
     # O
     sbp.Popen(f"adb shell input tap {var['O'][0]} {var['O'][1]}",shell=True,stdout=sbp.PIPE)
     sleep(var['sleeptime'])
@@ -55,6 +55,6 @@ platforms:\n  emu\n  cel"""
             var = yaml.safe_load(fp)
         try:
             while True:
-                MultiHostLT4(var)
+                MHLT4(var)
         except KeyboardInterrupt:
             sys.exit()

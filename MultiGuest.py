@@ -4,7 +4,7 @@ import sys, yaml#, json
 import subprocess as sbp
 from time import sleep
 
-def Multiguest(var):
+def MG(var):
     for i in range(5):
         # T
         sbp.Popen(f"adb shell input tap {var['T'][0]} {var['T'][1]}",shell=True,stdout=sbp.PIPE)
@@ -57,6 +57,6 @@ platforms:\n  emu\n  cel"""
             var = yaml.safe_load(fp)
         try:
             while True:
-                Multiguest(var)
+                MG(var)
         except KeyboardInterrupt:
             sys.exit()
